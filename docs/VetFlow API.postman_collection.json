@@ -1,0 +1,1228 @@
+{
+  "info": {
+    "_postman_id": "784b79fd-3e63-44e8-94df-7cab23de7aff",
+    "name": "VetFlow API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "53466199",
+    "_collection_link": "https://go.postman.co/collection/53466199-784b79fd-3e63-44e8-94df-7cab23de7aff?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "New Request",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"name\": \"Carlos Silva\",\r\n  \"email\": \"carlos@email.com\",\r\n  \"phone\": \"11911111111\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/tutors",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "tutors"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Criar Tutor (POST)",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "GET",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"name\": \"Carlos Silva\",\r\n  \"email\": \"carlos@email.com\",\r\n  \"phone\": \"11911111111\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/tutors?page=0&size=10",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "tutors"
+          ],
+          "query": [
+            {
+              "key": "page",
+              "value": "0"
+            },
+            {
+              "key": "size",
+              "value": "10"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Listar Tutores (GET)",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "GET",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"name\": \"Carlos Silva\",\r\n  \"email\": \"carlos@email.com\",\r\n  \"phone\": \"11911111111\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/tutors?page=0&size=10",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "tutors"
+          ],
+          "query": [
+            {
+              "key": "page",
+              "value": "0"
+            },
+            {
+              "key": "size",
+              "value": "10"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Buscar Tutor por ID (GET)",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "GET",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"name\": \"Carlos Silva\",\r\n  \"email\": \"carlos@email.com\",\r\n  \"phone\": \"11911111111\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/tutors/1",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "tutors",
+            "1"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Atualizar Tutor (PUT)",
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"name\": \"Carlos Eduardo Silva\",\r\n  \"email\": \"carlos.eduardo@email.com\",\r\n  \"phone\": \"11922222222\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/tutors/1",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "tutors",
+            "1"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": " Deletar Tutor (DELETE)",
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "DELETE",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"name\": \"Carlos Eduardo Silva\",\r\n  \"email\": \"carlos.eduardo@email.com\",\r\n  \"phone\": \"11922222222\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/tutors/1",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "tutors",
+            "1"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Criar Pet (POST)",
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"name\": \"Bolinha\",\r\n  \"species\": \"DOG\",\r\n  \"breed\": \"Labrador\",\r\n  \"birthDate\": \"2022-03-15\",\r\n  \"weightKg\": 12.5,\r\n  \"tutorId\": 2\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/pets",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "pets"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Listar Pets (GET)",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "GET",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"name\": \"Bolinha\",\r\n  \"species\": \"DOG\",\r\n  \"breed\": \"Labrador\",\r\n  \"birthDate\": \"2022-03-15\",\r\n  \"weightKg\": 12.5,\r\n  \"tutorId\": 2\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/pets?page=0&size=10",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "pets"
+          ],
+          "query": [
+            {
+              "key": "page",
+              "value": "0"
+            },
+            {
+              "key": "size",
+              "value": "10"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Buscar Pets por Tutor (GET)",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "GET",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"name\": \"Bolinha\",\r\n  \"species\": \"DOG\",\r\n  \"breed\": \"Labrador\",\r\n  \"birthDate\": \"2022-03-15\",\r\n  \"weightKg\": 12.5,\r\n  \"tutorId\": 2\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/pets/by-tutor/2",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "pets",
+            "by-tutor",
+            "2"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Atualizar Pet (PUT)",
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"name\": \"Bolinha\",\r\n  \"species\": \"DOG\",\r\n  \"breed\": \"Labrador Retriever\",\r\n  \"birthDate\": \"2022-03-15\",\r\n  \"weightKg\": 13.0,\r\n  \"tutorId\": 2\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/pets/1",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "pets",
+            "1"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Deletar Pet (DELETE)",
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "DELETE",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"name\": \"Bolinha\",\r\n  \"species\": \"DOG\",\r\n  \"breed\": \"Labrador Retriever\",\r\n  \"birthDate\": \"2022-03-15\",\r\n  \"weightKg\": 13.0,\r\n  \"tutorId\": 2\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/pets/1",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "pets",
+            "1"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": " Criar Clínica (POST)",
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"name\": \"Clínica Vet Clyvo\",\r\n  \"address\": \"Rua das Flores, 123\",\r\n  \"phone\": \"1140028922\",\r\n  \"email\": \"contato@vetclyvo.com.br\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/clinics",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "clinics"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Listar Clínicas (GET)",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "GET",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"name\": \"Clínica Vet Clyvo\",\r\n  \"address\": \"Rua das Flores, 123\",\r\n  \"phone\": \"1140028922\",\r\n  \"email\": \"contato@vetclyvo.com.br\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/clinics",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "clinics"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Buscar Clínica por ID (GET)",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "GET",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"name\": \"Clínica Vet Clyvo\",\r\n  \"address\": \"Rua das Flores, 123\",\r\n  \"phone\": \"1140028922\",\r\n  \"email\": \"contato@vetclyvo.com.br\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/clinics/1",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "clinics",
+            "1"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Atualizar Clínica (PUT)",
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"name\": \"Clínica Vet Clyvo Central\",\r\n  \"address\": \"Av. Paulista, 1000\",\r\n  \"phone\": \"1140028923\",\r\n  \"email\": \"central@vetclyvo.com.br\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/clinics/1",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "clinics",
+            "1"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Deletar Clínica (DELETE)",
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "DELETE",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"name\": \"Clínica Vet Clyvo Central\",\r\n  \"address\": \"Av. Paulista, 1000\",\r\n  \"phone\": \"1140028923\",\r\n  \"email\": \"central@vetclyvo.com.br\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/clinics/1",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "clinics",
+            "1"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Criar Agendamento (POST)",
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"scheduledAt\": \"2026-06-15T14:30:00\",\r\n  \"type\": \"CHECKUP\",\r\n  \"notes\": \"Consulta de rotina\",\r\n  \"petId\": 2,\r\n  \"clinicId\": 2\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/appointments",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "appointments"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Listar Agendamentos (GET)",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "GET",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"scheduledAt\": \"2026-06-15T14:30:00\",\r\n  \"type\": \"CHECKUP\",\r\n  \"notes\": \"Consulta de rotina\",\r\n  \"petId\": 2,\r\n  \"clinicId\": 2\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/appointments",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "appointments"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Agendamentos Pendentes (GET)",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "GET",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"scheduledAt\": \"2026-06-15T14:30:00\",\r\n  \"type\": \"CHECKUP\",\r\n  \"notes\": \"Consulta de rotina\",\r\n  \"petId\": 2,\r\n  \"clinicId\": 2\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/appointments/pending",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "appointments",
+            "pending"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Agendamentos por Pet (GET)",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "GET",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"scheduledAt\": \"2026-06-15T14:30:00\",\r\n  \"type\": \"CHECKUP\",\r\n  \"notes\": \"Consulta de rotina\",\r\n  \"petId\": 2,\r\n  \"clinicId\": 2\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/appointments/by-pet/2",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "appointments",
+            "by-pet",
+            "2"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Concluir Agendamento (PUT)",
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"scheduledAt\": \"2026-06-15T14:30:00\",\r\n  \"type\": \"CHECKUP\",\r\n  \"notes\": \"Consulta de rotina\",\r\n  \"petId\": 2,\r\n  \"clinicId\": 2\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/appointments/1/complete",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "appointments",
+            "1",
+            "complete"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Deletar Agendamento (DELETE)",
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "DELETE",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"scheduledAt\": \"2026-06-15T14:30:00\",\r\n  \"type\": \"CHECKUP\",\r\n  \"notes\": \"Consulta de rotina\",\r\n  \"petId\": 2,\r\n  \"clinicId\": 2\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/appointments/1",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "appointments",
+            "1"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Registrar Vacina (POST)",
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"vaccineName\": \"Antirrábica\",\r\n  \"appliedAt\": \"2026-05-20\",\r\n  \"nextDoseAt\": \"2027-05-20\",\r\n  \"batch\": \"LOTE-2026-001\",\r\n  \"petId\": 2\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/vaccines",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "vaccines"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Listar Vacinas (GET)",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "GET",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"vaccineName\": \"Antirrábica\",\r\n  \"appliedAt\": \"2026-05-20\",\r\n  \"nextDoseAt\": \"2027-05-20\",\r\n  \"batch\": \"LOTE-2026-001\",\r\n  \"petId\": 2\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/vaccines",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "vaccines"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Vacinas por Pet (GET)",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "GET",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"vaccineName\": \"Antirrábica\",\r\n  \"appliedAt\": \"2026-05-20\",\r\n  \"nextDoseAt\": \"2027-05-20\",\r\n  \"batch\": \"LOTE-2026-001\",\r\n  \"petId\": 2\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/vaccines/by-pet/2",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "vaccines",
+            "by-pet",
+            "2"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Vacinas Vencidas (GET)",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "GET",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"vaccineName\": \"Antirrábica\",\r\n  \"appliedAt\": \"2026-05-20\",\r\n  \"nextDoseAt\": \"2027-05-20\",\r\n  \"batch\": \"LOTE-2026-001\",\r\n  \"petId\": 2\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/vaccines/expired",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "vaccines",
+            "expired"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Atualizar Vacina (PUT)",
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"vaccineName\": \"Antirrábica V2\",\r\n  \"appliedAt\": \"2026-05-20\",\r\n  \"nextDoseAt\": \"2027-06-20\",\r\n  \"batch\": \"LOTE-2026-002\",\r\n  \"petId\": 2\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/vaccines/1",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "vaccines",
+            "1"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": " Deletar Vacina (DELETE)",
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "DELETE",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"vaccineName\": \"Antirrábica V2\",\r\n  \"appliedAt\": \"2026-05-20\",\r\n  \"nextDoseAt\": \"2027-06-20\",\r\n  \"batch\": \"LOTE-2026-002\",\r\n  \"petId\": 2\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/vaccines/1",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "vaccines",
+            "1"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Prescrever Medicamento (POST)",
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"name\": \"Amoxicilina\",\r\n  \"dosage\": \"500mg\",\r\n  \"frequency\": \"2x ao dia\",\r\n  \"startDate\": \"2026-05-20\",\r\n  \"endDate\": \"2026-06-20\",\r\n  \"petId\": 2\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/medications",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "medications"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": " Listar Medicamentos (GET)",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "GET",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"name\": \"Amoxicilina\",\r\n  \"dosage\": \"500mg\",\r\n  \"frequency\": \"2x ao dia\",\r\n  \"startDate\": \"2026-05-20\",\r\n  \"endDate\": \"2026-06-20\",\r\n  \"petId\": 2\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/medications",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "medications"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Medicamentos por Pet (GET)",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "GET",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"name\": \"Amoxicilina\",\r\n  \"dosage\": \"500mg\",\r\n  \"frequency\": \"2x ao dia\",\r\n  \"startDate\": \"2026-05-20\",\r\n  \"endDate\": \"2026-06-20\",\r\n  \"petId\": 2\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/medications/by-pet/2",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "medications",
+            "by-pet",
+            "2"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Medicamentos Ativos (GET)",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "GET",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"name\": \"Amoxicilina\",\r\n  \"dosage\": \"500mg\",\r\n  \"frequency\": \"2x ao dia\",\r\n  \"startDate\": \"2026-05-20\",\r\n  \"endDate\": \"2026-06-20\",\r\n  \"petId\": 2\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/medications/active",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "medications",
+            "active"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Suspender Medicamento (PUT)",
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"name\": \"Amoxicilina\",\r\n  \"dosage\": \"500mg\",\r\n  \"frequency\": \"2x ao dia\",\r\n  \"startDate\": \"2026-05-20\",\r\n  \"endDate\": \"2026-06-20\",\r\n  \"petId\": 2\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/medications/1/suspend",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "medications",
+            "1",
+            "suspend"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Concluir Medicamento (PUT)",
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"name\": \"Amoxicilina\",\r\n  \"dosage\": \"500mg\",\r\n  \"frequency\": \"2x ao dia\",\r\n  \"startDate\": \"2026-05-20\",\r\n  \"endDate\": \"2026-06-20\",\r\n  \"petId\": 2\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/medications/1/complete",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "medications",
+            "1",
+            "complete"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": " Deletar Medicamento (DELETE)",
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "DELETE",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"name\": \"Amoxicilina\",\r\n  \"dosage\": \"500mg\",\r\n  \"frequency\": \"2x ao dia\",\r\n  \"startDate\": \"2026-05-20\",\r\n  \"endDate\": \"2026-06-20\",\r\n  \"petId\": 2\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "Deletar Medicamento (DELETE)",
+          "host": [
+            "Deletar Medicamento (DELETE)"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}

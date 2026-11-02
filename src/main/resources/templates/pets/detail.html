@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>VetFlow — Detalhe do Pet</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="bg-light">
+<nav class="navbar navbar-dark bg-primary mb-4">
+    <div class="container">
+        <a class="navbar-brand fw-bold" th:href="@{/web/dashboard}">🐾 VetFlow</a>
+        <div class="d-flex align-items-center">
+            <span class="text-white me-3" th:text="${user.name}"></span>
+            <form th:action="@{/logout}" method="post" class="d-inline">
+                <button type="submit" class="btn btn-light btn-sm">Sair</button>
+            </form>
+        </div>
+    </div>
+</nav>
+
+<div class="container">
+    <a class="btn btn-outline-secondary btn-sm mb-3" th:href="@{/web/pets}">&larr; Voltar</a>
+
+    <div th:if="${param.agendado}" class="alert alert-success">Consulta agendada com sucesso!</div>
+    <div th:if="${param.vacinado}" class="alert alert-success">Vacina registrada com sucesso!</div>
+
+    <div class="card shadow-sm mb-4">
+        <div class="card-body">
+            <h2 th:text="${pet.name}"></h2>
+            <p class="text-muted">
+                <span th:text="${pet.species}"></span> — <span th:text="${pet.breed}"></span> —
+                <span th:text="${pet.ageInMonths} + ' meses'"></span> —
+                <span th:text="${pet.weightKg} + ' kg'"></span>
+            </p>
+            <p><strong>Tutor:</strong> <span th:text="${pet.tutor.name}"></span></p>
+
+            <div class="d-flex gap-2 mt-3">
+                <a class="btn btn-primary" th:href="@{/web/appointments/schedule/{id}(id=${pet.id})}">
+                    Agendar consulta
+                </a>
+                <a class="btn btn-success" sec:authorize="hasRole('VET')"
+                   th:href="@{/web/vaccines/apply/{id}(id=${pet.id})}"
+                   xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+                    Registrar vacina
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-6">
+            <h4>Agendamentos</h4>
+            <ul class="list-group mb-4">
+                <li class="list-group-item" th:each="a : ${appointments}">
+                    <span th:text="${a.type}"></span> —
+                    <span th:text="${#temporals.format(a.scheduledAt, 'dd/MM/yyyy HH:mm')}"></span>
+                    <span class="badge" th:classappend="${a.completed} ? 'bg-success' : 'bg-warning text-dark'"
+                          th:text="${a.completed} ? 'Concluído' : 'Pendente'"></span>
+                    <div class="text-muted small" th:text="${a.clinic.name}"></div>
+                </li>
+                <li class="list-group-item text-muted" th:if="${#lists.isEmpty(appointments)}">
+                    Nenhum agendamento.
+                </li>
+            </ul>
+        </div>
+        <div class="col-md-6">
+            <h4>Vacinas</h4>
+            <ul class="list-group mb-4">
+                <li class="list-group-item" th:each="v : ${vaccines}">
+                    <strong th:text="${v.vaccineName}"></strong>
+                    <div class="text-muted small">
+                        Aplicada em <span th:text="${#temporals.format(v.appliedAt, 'dd/MM/yyyy')}"></span> —
+                        Próxima dose: <span th:text="${#temporals.format(v.nextDoseAt, 'dd/MM/yyyy')}"></span>
+                    </div>
+                </li>
+                <li class="list-group-item text-muted" th:if="${#lists.isEmpty(vaccines)}">
+                    Nenhuma vacina registrada.
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+</body>
+</html>

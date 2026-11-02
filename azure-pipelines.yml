@@ -1,0 +1,102 @@
+trigger:
+  branches:
+    include:
+      - master
+
+pr: none
+
+parameters:
+  - name: selfHostedAgent
+    type: boolean
+    default: false
+
+pool:
+  ${{ if eq(parameters.selfHostedAgent, true) }}:
+    name: Default
+  ${{ else }}:
+    vmImage: ubuntu-latest
+
+variables:
+  - group: vetflow-secrets
+  - name: resourceGroup
+    value: rg-vetflow-s4
+  - name: location
+    value: eastus
+  - name: acrName
+    value: acrvetflows4563061
+  - name: aciName
+    value: aci-vetflow-s4
+  - name: dnsLabel
+    value: vetflow-s4-563061
+  - name: dbName
+    value: vetflowdb
+  - name: dbUser
+    value: vetflow
+
+stages:
+  - stage: CI
+    displayName: CI - Build e Testes
+    jobs:
+      - job: build_test
+        displayName: Build, testes automaticos e artefato
+        steps:
+          - task: Maven@3
+            displayName: Compilar e executar testes (mvn clean verify)
+            inputs:
+              mavenPomFile: pom.xml
+              goals: clean verify
+              options: -B
+              javaHomeOption: JDKVersion
+              jdkVersionOption: '1.17'
+              publishJUnitResults: true
+              testResultsFiles: '**/surefire-reports/TEST-*.xml'
+          - task: CopyFiles@2
+            displayName: Montar pacote de deploy
+            inputs:
+              SourceFolder: $(Build.SourcesDirectory)
+              Contents: |
+                target/vetflow.jar
+                Dockerfile
+                Dockerfile.postgres
+                scripts/deploy-aci.sh
+              TargetFolder: $(Build.ArtifactStagingDirectory)
+              flattenFolders: true
+          - task: PublishPipelineArtifact@1
+            displayName: Publicar artefato
+            inputs:
+              targetPath: $(Build.ArtifactStagingDirectory)
+              artifact: vetflow-jar
+              publishLocation: pipeline
+
+  - stage: CD
+    displayName: CD - Deploy no Azure Container Instance
+    dependsOn: CI
+    condition: and(succeeded(), eq(variables['Build.SourceBranch'], 'refs/heads/master'))
+    jobs:
+      - deployment: deploy_aci
+        displayName: Deploy no ACI
+        environment: vetflow-aci
+        strategy:
+          runOnce:
+            deploy:
+              steps:
+                - download: current
+                  artifact: vetflow-jar
+                - task: AzureCLI@2
+                  displayName: Build das imagens no ACR e deploy no ACI
+                  inputs:
+                    azureSubscription: sc-vetflow-azure
+                    scriptType: bash
+                    scriptLocation: scriptPath
+                    scriptPath: $(Pipeline.Workspace)/vetflow-jar/deploy-aci.sh
+                  env:
+                    RESOURCE_GROUP: $(resourceGroup)
+                    LOCATION: $(location)
+                    ACR_NAME: $(acrName)
+                    ACI_NAME: $(aciName)
+                    DNS_LABEL: $(dnsLabel)
+                    DB_NAME: $(dbName)
+                    DB_USER: $(dbUser)
+                    DB_PASSWORD: $(DB_PASSWORD)
+                    BUILD_ID: $(Build.BuildId)
+                    CONTEXT_DIR: $(Pipeline.Workspace)/vetflow-jar

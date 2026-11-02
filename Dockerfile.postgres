@@ -1,0 +1,6 @@
+FROM postgres:16
+
+ENV POSTGRES_DB=vetflowdb
+ENV POSTGRES_USER=vetflow
+
+EXPOSE 5432
