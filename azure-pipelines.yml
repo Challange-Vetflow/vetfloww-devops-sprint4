@@ -5,16 +5,8 @@ trigger:
 
 pr: none
 
-parameters:
-  - name: selfHostedAgent
-    type: boolean
-    default: false
-
 pool:
-  ${{ if eq(parameters.selfHostedAgent, true) }}:
-    name: Default
-  ${{ else }}:
-    vmImage: ubuntu-latest
+  vmImage: ubuntu-latest
 
 variables:
   - group: vetflow-secrets
